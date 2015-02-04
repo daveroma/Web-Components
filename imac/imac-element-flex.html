@@ -1,0 +1,134 @@
+
+<!--
+
+An iMac created with pure HTML and CSS.
+- It can be resized and will maintain aspect ratio.
+- It's a Web Component made with Polymer (https://www.polymer-project.org) for cross browser compatibility
+
+##### Example Usage
+
+<imac-element-flex>
+  <img src="image.jpg" alt="Image" />
+</imac-element-flex>
+
+Learn more about Web Components with Polymer:
+http://daveroma.com/learn/html5/web-components-with-polymer
+
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="imac-element-flex" noscript>
+  <template>
+    <style>
+    :host {
+      position: relative;
+      width: 100%;
+    }
+
+    :host .gradient-1 {
+      background: #bfbfbf; /* Old browsers */
+      background: -moz-linear-gradient(-45deg,  #bfbfbf 0%, #eaeaea 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#bfbfbf), color-stop(100%,#eaeaea)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(-45deg,  #bfbfbf 0%,#eaeaea 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(-45deg,  #bfbfbf 0%,#eaeaea 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(-45deg,  #bfbfbf 0%,#eaeaea 100%); /* IE10+ */
+      background: linear-gradient(135deg,  #bfbfbf 0%,#eaeaea 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfbfbf', endColorstr='#eaeaea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+
+    :host .gradient-2 {
+      background: #d8d8d8; /* Old browsers */
+      background: -moz-linear-gradient(top,  #d8d8d8 0%, #999999 0%, #eaeaea 84%, #d1d1d1 99%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d8d8d8), color-stop(0%,#999999), color-stop(84%,#eaeaea), color-stop(99%,#d1d1d1)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  #d8d8d8 0%,#999999 0%,#eaeaea 84%,#d1d1d1 99%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  #d8d8d8 0%,#999999 0%,#eaeaea 84%,#d1d1d1 99%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  #d8d8d8 0%,#999999 0%,#eaeaea 84%,#d1d1d1 99%); /* IE10+ */
+      background: linear-gradient(to bottom,  #d8d8d8 0%,#999999 0%,#eaeaea 84%,#d1d1d1 99%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d8d8', endColorstr='#d1d1d1',GradientType=0 ); /* IE6-9 */
+
+    }
+
+    :host .screen-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 60%;
+    }
+
+    :host .screen-wrap .screen {
+      position: absolute;
+      top: 0; bottom: 13%; left: 0; right: 0;
+      padding: 3.6%;
+      background: #000;
+      overflow: hidden;
+      border-top-left-radius: 13px;
+      border-top-right-radius: 13px;
+      -webkit-border-top-left-radius: 13px;
+      -webkit-border-top-right-radius: 13px;
+      -moz-border-radius-topleft: 13px;
+      -moz-border-radius-topright: 13px;
+    }
+
+    :host .screen-wrap .screen-bottom-border{
+      position: absolute;
+      bottom: 13%; left: 0; right: 0;
+      padding: 2%;
+      background: #000;
+    }
+
+    :host .screen-wrap .screen-lower{
+      position: absolute;
+      top: 87%; bottom: 0; left: 0; right: 0;
+      border-bottom-right-radius: 13px;
+      border-bottom-left-radius: 13px;
+      -webkit-border-bottom-right-radius: 13px;
+      -webkit-border-bottom-left-radius: 13px;
+      -moz-border-radius-bottomright: 13px;
+      -moz-border-radius-bottomleft: 13px;
+    }
+
+    :host .base-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 10%;
+    }
+
+    :host .base-wrap .stem {
+      position: absolute;
+      top: 0; bottom: 0; left: 42.5%; right: 42.5%;
+    }
+
+    :host .base-wrap .base {
+      position: absolute;
+      bottom: 0; right: 38%; left: 38%;
+      height: 3px;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+    }
+
+    polyfill-next-selector { content: 'img'; }
+    :host ::content img {
+      position: relative;
+      width: 100%;
+    }
+
+    </style>
+    <div class="screen-wrap">
+      <div class="screen">
+        <content select="img"></content>
+      </div>
+      <div class="screen-bottom-border"></div>
+      <div class="screen-lower gradient-1"></div>
+    </div>
+    <div class="base-wrap">
+      <div class="stem gradient-2"></div>
+      <div class="base gradient-1"></div>
+    </div>
+  </template>
+</polymer-element>
+
+
+
+
+
